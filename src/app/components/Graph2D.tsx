@@ -150,25 +150,26 @@ export function Graph2D({ equations, variables, showGrid, showAxes, showLabels, 
     const calculator = calculatorRef.current;
     if (!calculator) return;
 
-    calculator.setBlank();
-    calculator.setExpression({ id: 'var_a', latex: `a=${variables.a}` });
-    calculator.setExpression({ id: 'var_b', latex: `b=${variables.b}` });
-    calculator.setExpression({ id: 'var_c', latex: `c=${variables.c}` });
+    try {
+      calculator.setBlank();
+      calculator.setExpression({ id: 'var_a', latex: `a=${variables.a}` });
+      calculator.setExpression({ id: 'var_b', latex: `b=${variables.b}` });
+      calculator.setExpression({ id: 'var_c', latex: `c=${variables.c}` });
 
-    for (const eq of activeEquations) {
-      calculator.setExpression({
-        id: `eq_${eq.id}`,
-        latex: `y=${eq.expression}`,
-        color: eq.color,
-      });
-    }
-
-    for (const eq of equations) {
-      if (!eq.enabled || !eq.expression.trim()) {
-        calculator.removeExpression({ id: `eq_${eq.id}` });
+      for (const eq of activeEquations) {
+        if (eq.expression.trim()) {
+          calculator.setExpression({
+            id: `eq_${eq.id}`,
+            latex: `y=${eq.expression}`,
+            color: eq.color,
+            hidden: false,
+          });
+        }
       }
+    } catch (error) {
+      console.error('Error setting Desmos expressions:', error);
     }
-  }, [activeEquations, equations, variables]);
+  }, [activeEquations, variables]);
 
   return (
     <div className="w-full h-full relative overflow-hidden" style={{ background: theme.canvasBg }}>
