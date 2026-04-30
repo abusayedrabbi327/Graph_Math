@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "title": "14.6 TRIPLE INTEGRALS IN CYLINDRICAL AND SPHERICAL COORDINATES",
+    "chapterNumber": 14,
+    "description": "Visualizing the foundational coordinate volume wedges and the boundary surfaces (hemispheres, paraboloids, spheres, and cones) from the chapter's examples."
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "origin",
+        "label": "O (0,0,0)",
+        "position": [0, 0, 0],
+        "color": "#ff6b6b",
+        "size": 0.2
+      },
+      {
+        "id": "xPos",
+        "label": "X",
+        "position": [10, 0, 0],
+        "color": "#4ecdc4",
+        "size": 0.15
+      },
+      {
+        "id": "yPos",
+        "label": "Y",
+        "position": [0, 10, 0],
+        "color": "#45b7d1",
+        "size": 0.15
+      },
+      {
+        "id": "zPos",
+        "label": "Z",
+        "position": [0, 0, 10],
+        "color": "#ff9f1c",
+        "size": 0.15
+      },
+      {
+        "id": "fig_cyl_base",
+        "label": "Fig 14.6.1 - Cylindrical Base",
+        "position": [2.12, 2.12, 0],
+        "color": "#9b59b6",
+        "size": 0.1
+      },
+      {
+        "id": "fig_cyl_top",
+        "label": "Fig 14.6.3 - Cylindrical Wedge",
+        "position": [2.12, 2.12, 3],
+        "color": "#9b59b6",
+        "size": 0.15
+      },
+      {
+        "id": "ex1_hemi_top",
+        "label": "Ex 1 (Fig 14.6.5) - Hemisphere Top",
+        "position": [0, 0, 5],
+        "color": "#3498db",
+        "size": 0.15
+      },
+      {
+        "id": "ex1_cyl_edge",
+        "label": "Ex 1 (Fig 14.6.5) - Cylinder Edge",
+        "position": [3, 0, 0],
+        "color": "#3498db",
+        "size": 0.1
+      },
+      {
+        "id": "ex1_intersect",
+        "label": "Ex 1 (Fig 14.6.5) - Intersection",
+        "position": [3, 0, 4],
+        "color": "#3498db",
+        "size": 0.1
+      },
+      {
+        "id": "ex2_para_top",
+        "label": "Ex 2 (Fig 14.6.6) - Paraboloid Top",
+        "position": [0, 0, 9],
+        "color": "#2ecc71",
+        "size": 0.15
+      },
+      {
+        "id": "ex2_base_edge",
+        "label": "Ex 2 (Fig 14.6.6) - Base Edge",
+        "position": [0, 3, 0],
+        "color": "#2ecc71",
+        "size": 0.1
+      },
+      {
+        "id": "fig_sph_wedge",
+        "label": "Fig 14.6.9 - Spherical Wedge",
+        "position": [1.5, 1.5, 2.12],
+        "color": "#f1c40f",
+        "size": 0.15
+      },
+      {
+        "id": "ex3_sphere_top",
+        "label": "Ex 3 (Fig 14.6.11) - Sphere Top",
+        "position": [0, 0, 4],
+        "color": "#e67e22",
+        "size": 0.15
+      },
+      {
+        "id": "ex3_cone_intersect",
+        "label": "Ex 3 (Fig 14.6.11) - Cone Intersect",
+        "position": [2, 2, 2.83],
+        "color": "#e67e22",
+        "size": 0.1
+      },
+      {
+        "id": "ex4_hemi_top",
+        "label": "Ex 4 (Fig 14.6.12) - Hemisphere Top",
+        "position": [0, 0, 2],
+        "color": "#e74c3c",
+        "size": 0.15
+      },
+      {
+        "id": "ex4_base_edge",
+        "label": "Ex 4 (Fig 14.6.12) - Base Circle Edge",
+        "position": [2, 0, 0],
+        "color": "#e74c3c",
+        "size": 0.1
+      }
+    ],
+    "edges": [
+      {
+        "source": "origin",
+        "target": "xPos",
+        "label": "x-axis",
+        "color": "#4ecdc4",
+        "width": 0.02
+      },
+      {
+        "source": "origin",
+        "target": "yPos",
+        "label": "y-axis",
+        "color": "#45b7d1",
+        "width": 0.02
+      },
+      {
+        "source": "origin",
+        "target": "zPos",
+        "label": "z-axis",
+        "color": "#ff9f1c",
+        "width": 0.02
+      },
+      {
+        "source": "origin",
+        "target": "fig_cyl_base",
+        "label": "r distance",
+        "color": "#9b59b6",
+        "width": 0.02
+      },
+      {
+        "source": "fig_cyl_base",
+        "target": "fig_cyl_top",
+        "label": "z height",
+        "color": "#9b59b6",
+        "width": 0.02
+      },
+      {
+        "source": "origin",
+        "target": "ex1_cyl_edge",
+        "label": "r=3",
+        "color": "#3498db",
+        "width": 0.02
+      },
+      {
+        "source": "ex1_cyl_edge",
+        "target": "ex1_intersect",
+        "label": "cylinder wall",
+        "color": "#3498db",
+        "width": 0.02
+      },
+      {
+        "source": "ex1_intersect",
+        "target": "ex1_hemi_top",
+        "label": "hemisphere z=\\sqrt{25-r^2}",
+        "color": "#3498db",
+        "width": 0.02
+      },
+      {
+        "source": "origin",
+        "target": "ex2_base_edge",
+        "label": "r=3",
+        "color": "#2ecc71",
+        "width": 0.02
+      },
+      {
+        "source": "ex2_base_edge",
+        "target": "ex2_para_top",
+        "label": "paraboloid z=9-r^2",
+        "color": "#2ecc71",
+        "width": 0.02
+      },
+      {
+        "source": "origin",
+        "target": "fig_sph_wedge",
+        "label": "rho distance",
+        "color": "#f1c40f",
+        "width": 0.02
+      },
+      {
+        "source": "origin",
+        "target": "ex3_cone_intersect",
+        "label": "cone \\phi=\\pi/4",
+        "color": "#e67e22",
+        "width": 0.02
+      },
+      {
+        "source": "ex3_cone_intersect",
+        "target": "ex3_sphere_top",
+        "label": "sphere \\rho=4",
+        "color": "#e67e22",
+        "width": 0.02
+      },
+      {
+        "source": "origin",
+        "target": "ex4_base_edge",
+        "label": "r=2",
+        "color": "#e74c3c",
+        "width": 0.02
+      },
+      {
+        "source": "ex4_base_edge",
+        "target": "ex4_hemi_top",
+        "label": "hemisphere z=\\sqrt{4-r^2}",
+        "color": "#e74c3c",
+        "width": 0.02
+      }
+    ]
+  },
+  "formulas": {
+    "equations": [
+      "\\Delta V_k = r_k^* \\Delta z_k \\Delta r_k \\Delta \\theta_k",
+      "\\iiint_G f(r,\\theta,z) dV = \\iiint f(r,\\theta,z) r \\, dz \\, dr \\, d\\theta",
+      "\\Delta V_k = \\rho_k^{*2} \\sin\\phi_k^* \\Delta\\rho_k \\Delta\\phi_k \\Delta\\theta_k",
+      "\\iiint_G f(\\rho,\\theta,\\phi) dV = \\iiint f(\\rho,\\theta,\\phi) \\rho^2 \\sin\\phi \\, d\\rho \\, d\\phi \\, d\\theta",
+      "x = r \\cos\\theta",
+      "y = r \\sin\\theta",
+      "x = \\rho \\sin\\phi \\cos\\theta",
+      "y = \\rho \\sin\\phi \\sin\\theta",
+      "z = \\rho \\cos\\phi",
+      "z = \\sqrt{25 - r^2}",
+      "z = 9 - r^2",
+      "\\rho \\cos\\phi = \\rho \\sin\\phi"
+    ],
+    "aiExplanation": "These formulas summarize the volume elements for cylindrical and spherical coordinates, applying the necessary 'r' and 'ρ² sin(φ)' scale factors. They correspond directly to the graphed volumes, defining the bounds for surfaces like cones, spheres, cylinders, and paraboloids."
+  }
+}
